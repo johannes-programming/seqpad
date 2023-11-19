@@ -21,6 +21,12 @@ License
 
 This project is licensed under the MIT License.
 
+Links
+-----
+
+* `Download <https://pypi.org/project/seqpad/#files>`_
+* `Source <https://github.com/johannes-programming/seqpad>`_ 
+
 Credits
 -------
 - Author: Johannes Programming
