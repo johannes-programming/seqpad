@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "seqpad"
-version = "1.0.0"
+version = "1.0.1"
 description = "Pad nucleotide sequence."
 readme = "README.rst"
 authors = [
@@ -25,3 +25,7 @@ requires-python = ">=3.11"
 
 [project.license]
 file = "LICENSE.txt"
+
+[project.urls]
+Download = "https://pypi.org/project/seqpad/#files"
+Source = "https://github.com/johannes-programming/seqpad"
