@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seqpad Documentation</title>
+    <link href="./styles.css" rel="stylesheet" type="text/css"  />
+</head>
+<body>
+
+<h1>seqpad</h1>
+
+<h2>Overview</h2>
+<p>Pad nucleotide sequence.</p>
+
+<h2>Installation</h2>
+<p>To install <code>seqpad</code>, you can use <code>pip</code>. Open your terminal and run:</p>
+<pre><code class="bash">pip install seqpad</code></pre>
+
+<h2>Features</h2>
+<p>The core function of this project is implemented as follows:</p>
+<pre><code class="python">def seqpad(seq):
+    while len(seq) % 3 != 0:
+        seq += "N"
+    return seq
+</code></pre>
+<p>The project also provides a CLI that can also be accessed from within Python. For more information, read the help message that can be accessed through one of the two following ways.</p>
+<pre><code class="bash"># bash
+python3 -m seqpad -h
+</code></pre>
+<pre><code class="python"># python
+import seqpad
+seqpad.main(['-h'])
+</code></pre>
+
+<h2>License</h2>
+<p>This project is licensed under the MIT License.</p>
+
+<h2>Links</h2>
+<ul>
+    <li><a href="https://pypi.org/project/seqpad/#files">Download</a></li>
+    <li><a href="https://pypi.org/project/seqpad">Index</a></li>
+    <li><a href="https://github.com/johannes-programming/seqpad">Source</a></li>
+    <li><a href="http://seqpad.johannes-programming.online">Website</a></li>
+</ul>
+
+<h2>Credits</h2>
+<ul>
+    <li>Author: <a href="http://johannes-programming.online">Johannes</a></li>
+    <li>Email: <a href="mailto:johannes-programming@mailfence.com">johannes-programming@mailfence.com</a></li>
+</ul>
+
+<p>Thank you for using <code>seqpad</code>!</p>
+
+</body>
+</html>

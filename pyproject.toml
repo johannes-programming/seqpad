@@ -24,7 +24,7 @@ keywords = []
 name = "seqpad"
 readme = "README.rst"
 requires-python = ">=3.8"
-version = "1.0.7"
+version = "1.0.8"
 
 [project.license]
 file = "LICENSE.txt"
@@ -32,4 +32,6 @@ file = "LICENSE.txt"
 [project.urls]
 Documentation = "https://pypi.org/project/seqpad"
 Download = "https://pypi.org/project/seqpad/#files"
+Index = "https://pypi.org/project/seqpad"
 Source = "https://github.com/johannes-programming/seqpad"
+Website = "http://seqpad.johannes-programming.online"
