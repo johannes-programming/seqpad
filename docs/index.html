@@ -14,7 +14,7 @@
         <div id="features">
             <h2>Features</h2>
             <p>The core function of this project is implemented as follows:</p>
-            <pre><code>
+            <pre class="block"><code>
 def seqpad(seq):
     while len(seq) % 3 != 0:
         seq += "N"
@@ -22,12 +22,12 @@ def seqpad(seq):
     
 </code></pre>
             <p>The project also provides a CLI that can also be accessed from within Python. For more information, read the help message that can be accessed through one of the two following ways.</p>
-            <pre><code>
+            <pre class="block"><code>
 # bash
 python3 -m seqpad -h
 
 </code></pre>
-            <pre><code>
+            <pre class="block"><code>
 # python
 import seqpad
 seqpad.main(['-h'])
