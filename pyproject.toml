@@ -27,7 +27,7 @@ keywords = []
 name = "seqpad"
 readme = "README.rst"
 requires-python = ">=3.8"
-version = "1.0.11+local.2"
+version = "1.0.11+local.3"
 
 [project.license]
 file = "LICENSE.txt"
