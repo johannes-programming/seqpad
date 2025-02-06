@@ -5,42 +5,37 @@
         <title>seqpad</title>
     </head>
     <body>
-        <div id="top"></div>
-        <div id="overview">
-            <h2>Overview</h2>
-            <p>Pad nucleotide sequence.</p>
-        </div>
-        <div id="install"></div>
-        <div id="features">
-            <h2>Features</h2>
-            <p>The core function of this project is implemented as follows:</p>
-            <pre class="block"><code>
-def seqpad(seq):
+        <dl class="heading0">
+            <dt>seqpad</dt>
+            <dd>
+                <div id="overview">
+                    <h2>Overview</h2>
+                    <p>Pad nucleotide sequence.</p>
+                </div>
+                <div id="install"></div>
+                <div id="features">
+                    <h2>Features</h2>
+                    <p>The core function of this project is implemented as follows:</p>
+                    <pre class="block"><code>def seqpad(seq):
     while len(seq) % 3 != 0:
         seq += "N"
-    return seq
-    
-</code></pre>
-            <p>The project also provides a CLI that can also be accessed from within Python. For more information, read the help message that can be accessed through one of the two following ways.</p>
-            <pre class="block"><code>
-# bash
-python3 -m seqpad -h
-
-</code></pre>
-            <pre class="block"><code>
-# python
+    return seq</code></pre>
+                    <p>The project also provides a CLI that can also be accessed from within Python. For more information, read the help message that can be accessed through one of the two following ways.</p>
+                    <pre class="block"><code># bash
+python3 -m seqpad -h</code></pre>
+                    <pre class="block"><code># python
 import seqpad
-seqpad.main(['-h'])
-
-</code></pre>
-        </div>
-        <div id="testing"></div>
-        <div id="license"></div>
-        <div id="links"></div>
-        <div id="credits"></div>
-        <script src="https://www.johannes-programming.online/script.js"></script>
-        <script>
-            setupBasicProject();
-        </script>
+seqpad.main(['-h'])</code></pre>
+                </div>
+                <div id="testing"></div>
+                <div id="license"></div>
+                <div id="links"></div>
+                <div id="credits"></div>
+            </dd>
+        </dl>
     </body>
+    <script src="https://www.johannes-programming.online/script.js"></script>
+    <script>
+        setupBasicProject();
+    </script>
 </html>
