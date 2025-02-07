@@ -22,19 +22,18 @@ dependencies = [
     "click>=8.1.7",
     "preparse>=0.0.5",
 ]
-description = "Pad nucleotide sequence."
+description = "This project pads nucleotide sequences."
 keywords = []
 name = "seqpad"
 readme = "README.rst"
 requires-python = ">=3.8"
-version = "1.0.11+local.7"
+version = "1.0.11+local.8"
 
 [project.license]
 file = "LICENSE.txt"
 
 [project.urls]
-Documentation = "https://pypi.org/project/seqpad"
 Download = "https://pypi.org/project/seqpad/#files"
 Index = "https://pypi.org/project/seqpad/"
-Source = "https://github.com/johannes-programming/seqpad"
-Website = "https://seqpad.johannes-programming.online"
+Source = "https://github.com/johannes-programming/seqpad/"
+Website = "https://seqpad.johannes-programming.online/"
