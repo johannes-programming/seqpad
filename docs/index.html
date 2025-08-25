@@ -20,7 +20,7 @@
                     <dt id="implement">Implementation</dt>
                     <dd id="implementCorpus">
                         <p>The core function of this project is implemented as follows:</p>
-                        <pre class="block"><code>def seqpad(seq):
+                        <pre class="block"><code>def seqpad(seq: Any) -> Any:
     while len(seq) % 3 != 0:
         seq += "N"
     return seq</code></pre>

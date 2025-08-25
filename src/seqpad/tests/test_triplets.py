@@ -1,4 +1,5 @@
 import unittest
+from typing import *
 
 # Importing the function to be tested
 from seqpad import seqpad
@@ -6,12 +7,12 @@ from seqpad import seqpad
 
 class TestSeqPad(unittest.TestCase):
 
-    def test_already_multiple_of_three(self):
+    def test_already_multiple_of_three(self: Self) -> None:
         # Test case where sequence length is already a multiple of three
         self.assertEqual(seqpad("ATG"), "ATG")
         self.assertEqual(len(seqpad("ATG")), 3)
 
-    def test_not_multiple_of_three(self):
+    def test_not_multiple_of_three(self: Self) -> None:
         # Test case where sequence length is not a multiple of three
         self.assertEqual(seqpad("AT"), "ATN")
         self.assertEqual(len(seqpad("AT")), 3)
@@ -21,12 +22,12 @@ class TestSeqPad(unittest.TestCase):
         self.assertEqual(len(seqpad("ATGCA")), 6)
         self.assertEqual(len(seqpad("ATGCAN")), 6)
 
-    def test_empty_sequence(self):
+    def test_empty_sequence(self: Self) -> None:
         # Test case where input sequence is empty
         self.assertEqual(seqpad(""), "")
         self.assertEqual(len(seqpad("")), 0)
 
-    def test_length_of_result(self):
+    def test_length_of_result(self: Self) -> None:
         # Check if the result has length that is a multiple of three
         test_sequences = ["A", "AT", "ATGCA", "ATGCGTACG"]
 
@@ -34,7 +35,7 @@ class TestSeqPad(unittest.TestCase):
             padded_seq = seqpad(seq)
             self.assertEqual(len(padded_seq) % 3, 0, f"Failed for input: {seq}")
 
-    def test_edge_cases(self):
+    def test_edge_cases(self: Self) -> None:
         # Testing edge cases such as strings with non-standard nucleotides
         self.assertEqual(seqpad("NNN"), "NNN")
         self.assertEqual(seqpad("N"), "NNN")
