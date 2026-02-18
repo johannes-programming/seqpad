@@ -25,22 +25,30 @@
                     <dd id="linksCorpus"></dd>
                     <dt id="install">Installation</dt>
                     <dd id="installCorpus"></dd>
-                    <dt id="implement">Implementation</dt>
-                    <dd id="implementCorpus">
-                        <p>The core function of this project is implemented as follows:</p>
-                        <pre class="block"><code>def seqpad(seq: Any) -> Any:
+                    <dt id="features">Features</dt>
+                    <dd id="featuresCorpus">
+                        <dl class="heading4">
+                            <dt>seqpad.main</dt>
+                            <dd>
+                                <p>The project also provides a CLI that can also be accessed from within Python. For more information, read the help message that can be accessed through one of the two following ways.</p>
+                                <pre class="block"><code># bash
+python3 -m seqpad -h</code></pre>
+                                <pre class="block"><code># python
+import seqpad
+seqpad.main(['-h'])</code></pre>
+                            </dd>
+                            <dt>seqpad.seqpad(seq: Any) -> Any</dt>
+                            <dd>
+                                <p>The core function of this project is implemented as follows:</p>
+                                <pre class="block"><code>def seqpad(seq: Any) -> Any:
     while len(seq) % 3 != 0:
         seq += "N"
     return seq</code></pre>
-                        <p>The project also provides a CLI that can also be accessed from within Python. For more information, read the help message that can be accessed through one of the two following ways.</p>
-                        <pre class="block"><code># bash
-python3 -m seqpad -h</code></pre>
-                        <pre class="block"><code># python
-import seqpad
-seqpad.main(['-h'])</code></pre>
+                            </dd>
+                            <dt>seqpad.test() -> unittest.TextTestResult</dt>
+                            <dd class="testingCorpus"></dd>
+                        </dl>
                     </dd>
-                    <dt id="testing">Testing</dt>
-                    <dd id="testingCorpus"></dd>
                     <dt id="license">License</dt>
                     <dd id="licenseCorpus"></dd>
                     <dt id="impressum">Impressum</dt>
