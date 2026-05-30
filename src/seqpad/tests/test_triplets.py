@@ -33,7 +33,9 @@ class TestSeqPad(unittest.TestCase):
 
         for seq in test_sequences:
             padded_seq = seqpad(seq)
-            self.assertEqual(len(padded_seq) % 3, 0, f"Failed for input: {seq}")
+            self.assertEqual(
+                len(padded_seq) % 3, 0, f"Failed for input: {seq}"
+            )
 
     def test_edge_cases(self: Self) -> None:
         # Testing edge cases such as strings with non-standard nucleotides
