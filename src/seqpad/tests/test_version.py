@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-__all__: list[str] = ["TestSeqPad"]
+__all__: list[str] = ["TestVersion"]
 
 import unittest
 from collections import abc
