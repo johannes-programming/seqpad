@@ -33,9 +33,18 @@ def main(args: abc.Iterable[str] | None = None) -> int:
 def parse_args(args: abc.Iterable[str] | None = None) -> argparse.Namespace:
     parser: argparse.ArgumentParser
     version: str
-    parser = argparse.ArgumentParser(fromfile_prefix_chars="@", add_help=False)
-    parser.add_argument("-h", "--help", action="help")
-    version = "%(prog), version " + metadata.version("seqpad")
+    parser = argparse.ArgumentParser(
+        add_help=False,
+        fromfile_prefix_chars="@",
+        prog="seqpad",
+    )
+    parser.add_argument(
+        "-h",
+        "--help",
+        action="help",
+        help="show this help message and exit",
+    )
+    version = "%(prog)s, version " + metadata.version("seqpad")
     parser.add_argument("-V", "--version", action="version", version=version)
     parser.add_argument("seq", nargs="?")
     return parser.parse_args(args)

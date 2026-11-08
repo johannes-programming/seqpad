@@ -30,7 +30,7 @@ Features
 
 The functions in ``seqpad.core`` can also be imported from ``seqpad`` directly.
 
-``seqpad.core.main(args: Iterable[int] | None = None) -> int``
+``seqpad.core.main(args: Iterable[str] | None = None) -> int``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The project also provides a CLI that can also be accessed from within Python.
