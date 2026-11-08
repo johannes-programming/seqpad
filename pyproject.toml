@@ -17,10 +17,7 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
     "Typing :: Typed",
 ]
-dependencies = [
-    "click>=8.2,<9",
-    "preparse>=1.1,<2",
-]
+dependencies = []
 description = "This project pads nucleotide sequences."
 keywords = []
 license = "MIT"
@@ -30,7 +27,7 @@ license-files = [
 name = "seqpad"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "1.1.0.post0"
+version = "1.2.0"
 
 [project.urls]
 Download = "https://pypi.org/project/seqpad/#files"

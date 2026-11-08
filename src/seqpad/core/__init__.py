@@ -1,22 +1,54 @@
 from __future__ import annotations
 
-__all__: list[str] = ["main", "seqpad"]
+__all__: list[str] = ["main", "parse_args", "run", "seqpad"]
 
+import argparse
+import logging
+from collections import abc
+from importlib import metadata
 from typing import Any
 
-import click
-import preparse
+
+def main(args: abc.Iterable[str] | None = None) -> int:
+    space: argparse.Namespace
+    try:
+        space = parse_args(args)
+    except SystemExit as exit:
+        if isinstance(exit.code, int):
+            return exit.code
+        else:
+            return int(bool(exit.code))
+    try:
+        run(space.seq)
+    except Exception as exc:
+        logging.exception(exc)
+        return 1
+    return 0
 
 
-@preparse.PreParser().click()
-@click.command(add_help_option=False)
-@click.help_option("-h", "--help")
-@click.version_option(None, "-V", "--version")
-@click.argument("seq", type=str, required=False)
-def main(seq: str | None) -> None:
-    "This program pads the given seq to a length that is a multiple of three."
+def parse_args(args: abc.Iterable[str] | None = None) -> argparse.Namespace:
+    parser: argparse.ArgumentParser
+    version: str
+    parser = argparse.ArgumentParser(
+        add_help=False,
+        fromfile_prefix_chars="@",
+        prog="seqpad",
+    )
+    parser.add_argument(
+        "-h",
+        "--help",
+        action="help",
+        help="show this help message and exit",
+    )
+    version = "%(prog)s, version " + metadata.version("seqpad")
+    parser.add_argument("-V", "--version", action="version", version=version)
+    parser.add_argument("seq", nargs="?")
+    return parser.parse_args(args)
+
+
+def run(seq: str | None = None) -> None:
     if seq is not None:
-        click.echo(seqpad(seq))
+        print(seqpad(seq))
 
 
 def seqpad(seq: Any) -> Any:

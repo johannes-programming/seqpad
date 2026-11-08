@@ -1,9 +1,11 @@
 from __future__ import annotations
 
-__all__: list[str] = ["main", "seqpad", "test"]
+__all__: list[str] = ["main", "parse_args", "run", "seqpad", "test"]
 
-from seqpad.core import main, seqpad
+import sys
+
+from seqpad.core import main, parse_args, run, seqpad
 from seqpad.tests import test
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
