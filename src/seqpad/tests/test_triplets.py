@@ -49,6 +49,7 @@ class TestSeqPad(unittest.TestCase):
         self.assertEqual(seqpad("N"), "NNN")
         self.assertEqual(len(seqpad("N")), 3)
         self.assertEqual(len(seqpad("NNN")), 3)
+        self.assertListEqual(seqpad(["A"]), ["A", "N", "N"])
 
 
 if __name__ == "__main__":

@@ -6,11 +6,13 @@ import argparse
 import logging
 from collections import abc
 from importlib import metadata
-from typing import TypeVar
+from typing import Any, TypeVar, overload
 
 from seqpad.typing.SizedAndSupportsAdd import SizedAndSupportsAdd
+from seqpad.typing.SizedAndSupportsIadd import SizedAndSupportsIadd
 
-Seq = TypeVar("Seq", bound=SizedAndSupportsAdd[str])
+AddSeq = TypeVar("AddSeq", bound=SizedAndSupportsAdd[str])
+IaddSeq = TypeVar("IaddSeq", bound=SizedAndSupportsIadd[str])
 
 
 def main(args: abc.Iterable[str] | None = None) -> int:
@@ -55,7 +57,15 @@ def run(seq: str | None = None) -> None:
         print(seqpad(seq))
 
 
-def seqpad(seq: Seq) -> Seq:
+@overload
+def seqpad(seq: IaddSeq) -> IaddSeq: ...
+
+
+@overload
+def seqpad(seq: AddSeq) -> AddSeq: ...
+
+
+def seqpad(seq: Any) -> Any:
     while len(seq) % 3 != 0:
-        seq = seq + "N"
+        seq += "N"
     return seq

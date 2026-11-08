@@ -61,14 +61,14 @@ For more information, read the help message that can be accessed through one of 
 
     **Added in version 1.2.**
 
-``seqpad.core.seqpad[Seq: SizedAndSupportsAdd[str]](seq: Seq) -> Seq``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``seqpad.core.seqpad[AddSeq: SizedAndSupportsAdd[str]](seq: AddSeq) -> AddSeq`` ``seqpad.core.seqpad[IaddSeq: SizedAndSupportsAdd[str]](seq: IaddSeq) -> IaddSeq``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The core function of this project is implemented as follows:
 
 .. code-block:: python
 
-    def seqpad(seq: Seq) -> Seq:
+    def seqpad(seq):
         while len(seq) % 3 != 0:
             seq = seq + "N"
         return seq
@@ -100,6 +100,15 @@ The following code can also be executed by running the project's ``run_tests.py`
 
 ``__add__(other: Other, /) -> Self``
 """"""""""""""""""""""""""""""""""""
+
+``__len__() -> int``
+""""""""""""""""""""
+
+``class seqpad.typing.SizedAndSupportsIadd.SizedAndSupportsIadd[Other]``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``__iadd__(other: Other, /) -> Self``
+"""""""""""""""""""""""""""""""""""""
 
 ``__len__() -> int``
 """"""""""""""""""""
