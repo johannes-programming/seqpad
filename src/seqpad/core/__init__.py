@@ -13,17 +13,17 @@ def main(args: abc.Iterable[str] | None = None) -> int:
     space: argparse.Namespace
     try:
         space = parse_args(args)
+        run(space.seq)
     except SystemExit as exit:
         if isinstance(exit.code, int):
             return exit.code
         else:
             return int(bool(exit.code))
-    try:
-        run(space.seq)
-    except Exception as exc:
+    except BaseException as exc:
         logging.exception(exc)
         return 1
-    return 0
+    else:
+        return 0
 
 
 def parse_args(args: abc.Iterable[str] | None = None) -> argparse.Namespace:
@@ -38,10 +38,16 @@ def parse_args(args: abc.Iterable[str] | None = None) -> argparse.Namespace:
         "-h",
         "--help",
         action="help",
-        help="show this help message and exit",
+        help="show this message and abort",
     )
     version = "%(prog)s, version " + metadata.version("seqpad")
-    parser.add_argument("-V", "--version", action="version", version=version)
+    parser.add_argument(
+        "-V",
+        "--version",
+        action="version",
+        help="show the version and abort",
+        version=version,
+    )
     parser.add_argument("seq", nargs="?")
     return parser.parse_args(args)
 

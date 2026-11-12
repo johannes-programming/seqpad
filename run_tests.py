@@ -1,9 +1,15 @@
 from __future__ import annotations
 
-__all__: list[str] = []
+__all__: list[str] = ["main", "test"]
 
 import sys
 
-import seqpad.tests
+from seqpad.tests import test
 
-sys.exit(1 - seqpad.tests.test().wasSuccessful())
+
+def main() -> int:
+    return int(not seqpad.tests.test().wasSuccessful())
+
+
+if __name__ == "__main__":
+    main()
